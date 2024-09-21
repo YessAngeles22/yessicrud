@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agenda de contactos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" >
+    </head>
+<body>
+  <h1>Mi Agenda</h1>
+
+  <form action="/add" method="POST">
+        <input type="text" name="name" class="form" placeholder="Nombre" required >
+        <input type="text" name="phone" class="form1" placeholder="Telefono" requiered >
+      <button type ="submit">Agregar</button>
+  </form>
+    <ul>
+        {% for contact in contacts%}
+        <li>{{contact['name']}}-{{contact['phone']}}</li>
+        {%endfor%}
+    </ul>
+ </body>
+</html>
+
+  
+
+
